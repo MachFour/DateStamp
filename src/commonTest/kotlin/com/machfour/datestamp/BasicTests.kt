@@ -26,6 +26,25 @@ class BasicTests {
     }
 
     @Test
+    internal fun testEpochDateStamp() {
+        assertEquals(
+            expected = makeDateStamp(1970, 1, 1),
+            actual = epochDateStamp(0L),
+            message = "Constructing datestamp from epoch day failed"
+        )
+        assertEquals(
+            expected = makeDateStamp(1970, 1, 2),
+            actual = epochDateStamp(1L),
+            message = "Constructing datestamp from epoch day failed"
+        )
+        assertEquals(
+            expected = makeDateStamp(1969, 12, 31),
+            actual = epochDateStamp(-1L),
+            message = "Constructing datestamp from epoch day failed"
+        )
+    }
+
+    @Test
     internal fun testToString() {
         assertEquals(
             expected = "2020-02-02",
