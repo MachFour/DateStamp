@@ -20,9 +20,13 @@ class BasicTests {
     }
 
     @Test
-    internal fun testCurrentTzOffset() {
-        print("Current TZ offset seconds: ${currentTimezoneOffsetSeconds()}\n")
+    internal fun testCurrentTimezoneOffset() {
+        print("Current timezone offset: ${currentTimezoneOffsetSeconds()} seconds\n")
+    }
 
+    @Test
+    internal fun testCurrentEpochSeconds() {
+        print("Current epoch seconds: ${currentEpochSeconds()}\n")
     }
 
     @Test

@@ -2,16 +2,14 @@ package com.machfour.datestamp
 
 import kotlinx.cinterop.*
 import platform.posix.localtime_r
-import platform.posix.time
 import platform.posix.tm
 
 internal actual fun currentTimezoneOffsetSeconds(): Int {
-    val currentTime = time(null)
+    val secondsSinceEpoch = currentEpochSeconds()
 
     val currentTzOffset = memScoped {
         val currentLocalTime = nativeHeap.alloc<tm>()
-        localtime_r(cValuesOf(currentTime), currentLocalTime.ptr)
-
+        localtime_r(cValuesOf(secondsSinceEpoch), currentLocalTime.ptr)
         currentLocalTime.tm_gmtoff
     }
 

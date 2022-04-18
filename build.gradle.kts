@@ -22,6 +22,9 @@ kotlin {
             useJUnitPlatform()
         }
 
+        tasks.withType<Jar> {
+            duplicatesStrategy = DuplicatesStrategy.WARN
+        }
     }
 
     //js(BOTH) {
