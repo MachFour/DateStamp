@@ -15,4 +15,3 @@ internal fun dayMonthIsValid(year: Int, month: Int, day: Int): Boolean {
 internal fun isLeapYear(prolepticYear: Int): Boolean {
     return (prolepticYear and 3) == 0 && (prolepticYear % 100 != 0 || prolepticYear % 400 == 0)
 }
-

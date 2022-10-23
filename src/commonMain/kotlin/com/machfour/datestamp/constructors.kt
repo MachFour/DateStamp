@@ -42,9 +42,7 @@ fun iso8601StringDateStamp(dateString: String): DateStamp {
 fun pastDateStamp(daysAgo: Long): DateStamp = currentDateStamp().step(-1 * daysAgo)
 
 // Creates a new DateStamp from a number of days since Jan 1, 1970
-fun epochDateStamp(epochDay: Long): DateStamp {
-    return epochDayToYMD(epochDay)
-}
+fun epochDateStamp(epochDay: Long) = epochDayToYMD(epochDay)
 
 
 private fun illegalDate(dateString: String) =
