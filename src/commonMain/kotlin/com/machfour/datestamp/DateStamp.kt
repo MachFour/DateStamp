@@ -1,8 +1,12 @@
 package com.machfour.datestamp
 
+// Gregorian date representation in local time (no timezone support)
 interface DateStamp: Comparable<DateStamp> {
+    // Gregorian calendar year
     val year: Int
+    // month of year, 1-indexed
     val month: Int
+    // day of month, 1-indexed
     val day: Int
 
     fun toIso8601String(): String
